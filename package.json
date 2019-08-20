@@ -1,0 +1,8 @@
+{
+  "name": "wtf-lu",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:hungryYang/wtf-lu.git",
+  "author": "hungryyang <ycr1714336458@gmail.com>",
+  "license": "MIT"
+}
