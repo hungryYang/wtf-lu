@@ -15,17 +15,24 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   module: {
-    rules: [{
+    rules: [
+      {
       test: /\.tsx?$/,
       loader: 'awesome-typescript-loader',
-    }, {
-      test: /\.jsx$/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env']
+      },
+      {
+        test: /\.jsx$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
         }
-      }
-    }]
+      },
+      {
+        test: /icons.+\.svg$/,
+        loader: 'svg-sprite-loader',
+      },
+    ]
   },
 }
