@@ -1,16 +1,17 @@
-import React, {FunctionComponent} from 'react';
-import './importAllIcons'
-interface Props {
+import React, {FunctionComponent, HTMLAttributes} from 'react';
+import './importAllIcons';
+import './icon.scss';
+import classnames from 'utils/classnames';
+
+interface Props extends HTMLAttributes<HTMLOrSVGElement> {
     name: string
 }
 
-const Icon: FunctionComponent<Props> = (Props) => {
+const Icon: FunctionComponent<Props> = ({name, className, ...restProps}) => {
     return (
-        <span>
-           <svg>
-              <use xlinkHref={`#${Props.name}`}/>
-           </svg>
-        </span>
+        <svg className={classnames(["wtf-icon", className])} {...restProps}>
+            <use xlinkHref={`#${name}`}/>
+        </svg>
     );
 };
 
