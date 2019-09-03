@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon测试 测试Icon 1`] = `
+<svg
+  className="wtf-icon"
+>
+  <use
+    xlinkHref="#add"
+  />
+</svg>
+`;

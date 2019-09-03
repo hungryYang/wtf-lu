@@ -9,7 +9,7 @@ interface Props extends HTMLAttributes<HTMLOrSVGElement> {
 
 const Icon: FunctionComponent<Props> = ({name, className, ...restProps}) => {
     return (
-        <svg className={classnames(["wtf-icon", className])} {...restProps}>
+        <svg className={classnames("wtf-icon", className)} {...restProps}>
             <use xlinkHref={`#${name}`}/>
         </svg>
     );
