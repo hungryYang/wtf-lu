@@ -1,0 +1,21 @@
+.wtf-button {
+  display: inline-flex;
+  vertical-align: middle;
+  border-radius: .3em;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+  border: 1px solid #d9d9d9;
+  padding: 0 15px;
+  height: 32px;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  color: rgba(0,0,0,0.65);
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    color: #40a9ff;
+    border-color: #40a9ff;
+  }
+}

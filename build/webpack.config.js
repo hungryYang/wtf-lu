@@ -6,7 +6,6 @@ module.exports = {
     index: './lib/index.tsx'
   },
   output: {
-    filename: '[name].js',
     path: path.resolve(__dirname, '../dist/lib'),
     library: 'wtf-lu',
     libraryTarget: "umd"
@@ -20,8 +19,8 @@ module.exports = {
   module: {
     rules: [
       {
-      test: /\.tsx?$/,
-      loader: 'awesome-typescript-loader',
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader',
       },
       {
         test: /\.jsx$/,
@@ -34,7 +33,7 @@ module.exports = {
       },
       {
         test: /icons.+\.svg$/,
-        loader: 'svg-sprite-loader',
+        loader: 'svg-sprite-loader'
       },
       {
         test: /\.scss$/,

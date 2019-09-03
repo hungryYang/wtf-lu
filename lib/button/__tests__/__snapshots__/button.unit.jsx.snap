@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`按钮测试 icon位置测试 1`] = `
+<button
+  className="wtf-button test"
+>
+  测试
+   
+  <svg
+    className="wtf-icon"
+  >
+    <use
+      xlinkHref="#add"
+    />
+  </svg>
+</button>
+`;
+
+exports[`按钮测试 带icon 1`] = `
+<button
+  className="wtf-button test"
+>
+  <svg
+    className="wtf-icon"
+  >
+    <use
+      xlinkHref="#add"
+    />
+  </svg>
+   
+  测试
+</button>
+`;
+
+exports[`按钮测试 普通模式 1`] = `
+<button
+  className="wtf-button test"
+>
+   
+  测试
+</button>
+`;

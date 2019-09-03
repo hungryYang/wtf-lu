@@ -9,9 +9,14 @@ const handlerClick = (event: React.MouseEvent<HTMLOrSVGElement>) => {
 
 ReactDOM.render(
     <div>
-        <Button/>
-        <Icon name="add" onClick={handlerClick} onMouseEnter={()=>{console.log('mouseEnter')}}/>
-        <Icon name="add" className="test-icon test-icon-2" onClick={handlerClick} onMouseEnter={()=>{console.log('mouseEnter')}}/>
+        <Button icon="add" onClick={handlerClick} className="j">测试1</Button>
+        <Button icon="left" onClick={handlerClick} className="j">测试1</Button>
+        <Button icon="download"  iconPosition="right" onClick={handlerClick} className="j">测试1</Button>
+        <Button icon="up" onClick={handlerClick} className="j">测试1</Button>
+
+        <Icon name="add"  onClick={handlerClick} onMouseEnter={()=>{console.log('mouseEnter')}}/>
+
+        <Icon name="right" className="test-icon test-icon-2" onClick={handlerClick} onMouseEnter={()=>{console.log('mouseEnter')}}/>
     </div>,
     document.getElementById('root')
 );

@@ -1,15 +1,3 @@
 {
-  "presets": ["react-app"],
-  "env": {
-    "test": {
-      "presets": [
-        [
-          "env",
-          {
-            "modules": "commonjs"
-          }
-        ]
-      ]
-    }
-  }
+  "presets": ["react-app", "@babel/preset-env"]
 }

@@ -1,9 +1,30 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import Icon from '../icon/icon';
+import classnames from 'utils/classnames';
+import './button.scss';
 
-function Button() {
-    return (
-        <button>按钮</button>
-    );
+interface ButtonProps {
+    className?: string,
+    icon?: string,
+    iconPosition?: string,
+    onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-export default Button
+const Button: React.FunctionComponent<ButtonProps> = (props) => {
+    const icon = props.icon && <Icon name={props.icon}/>;
+    const inner = (
+        props.iconPosition === 'right' ?
+            <Fragment>{props.children} {icon}</Fragment>
+            :
+            <Fragment>{icon} {props.children}</Fragment>
+    );
+    return (
+        <button
+            className={classnames('wtf-button', props.className)}
+            onClick={props.onClick}
+        >{inner}</button>
+    );
+};
+
+
+export default Button;
