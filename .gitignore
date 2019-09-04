@@ -2,3 +2,5 @@
 /.idea
 /dist
 /yarn-error.log
+/coverage
+/junit.xml

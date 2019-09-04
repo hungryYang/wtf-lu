@@ -1,11 +1,11 @@
 module.exports = {
   verbose: true,
   clearMocks: false,
-  collectCoverage: false,
-  collectCoverageFrom: ["{lib,include}/**/*.{js,jsx,ts,tsx}", "!**/node_modules/**"],
+  collectCoverage: false,  // 收集测试覆盖率信息
+  collectCoverageFrom: ["{lib,utils}/**/*.{js,jsx,ts,tsx}", "!**/node_modules/**"],
   reporters: ["default"],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
-  moduleDirectories: ['node_modules', 'include'],
+  moduleDirectories: ['node_modules', 'utils'],
   moduleNameMapper: {
     "\\.(jpg|jpeg|png|gif)$": "<rootDir>/test/__mocks__/fileMock.js",
     ".*\\.(css|less|scss)$": "<rootDir>/test/__mocks__/styleMock.js",
