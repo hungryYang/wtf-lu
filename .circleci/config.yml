@@ -1,33 +1,22 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
+#https://github.com/revolunet/create-react-app-circleci/blob/master/.circleci/config.yml
 defaults: &defaults
   docker:
-    # specify the version you desire here
-    - image: circleci/node:8
+  - image: circleci/node:8
 
 version: 2
 jobs:
   prepare:
     <<: *defaults
-
     steps:
     - checkout
-
-    # Download and cache dependencies
     - restore_cache:
         keys:
-        - v1-dependencies-{{ checksum "package.json" }}
-
-
+        - v2-dependencies-{{ checksum "package.json" }}
     - run: yarn install
-
     - save_cache:
         paths:
         - node_modules
-        key: v1-dependencies-{{ checksum "package.json" }}
-
+        key: v2-dependencies-{{ checksum "package.json" }}
     - persist_to_workspace:
         root: .
         paths:
@@ -58,6 +47,9 @@ workflows:
   build_accept_deploy:
     jobs:
     - prepare
+    - build:
+        requires:
+        - test
     - test:
         requires:
         - prepare
