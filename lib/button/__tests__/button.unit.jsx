@@ -22,12 +22,12 @@ describe('按钮测试', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  // it('按钮点击测试', () => {
-  //   const fn = jest.fn()
-  //   const wrapper = mount(<Button icon="add" onClick={fn}/>);
-  //   wrapper.find('svg').simulate('click')
-  //   expect(fn).toBeCalled();
-  // });
+  it('按钮点击测试', () => {
+    const fn = jest.fn()
+    const wrapper = mount(<Button icon="add" onClick={fn}/>);
+    wrapper.find('svg').simulate('click')
+    expect(fn).toBeCalled();
+  });
 });
 
 
