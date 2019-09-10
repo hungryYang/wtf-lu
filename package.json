@@ -1,9 +1,11 @@
 {
   "name": "wtf-lu",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/lib/index",
   "types": "dist/lib/index",
-  "files": ["/dist"],
+  "files": [
+    "/dist"
+  ],
   "repository": "git@github.com:hungryYang/wtf-lu.git",
   "author": "hungryyang <ycr1714336458@gmail.com>",
   "license": "MIT",
