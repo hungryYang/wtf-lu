@@ -46,7 +46,7 @@ jobs:
           - package.json
           - LICENSE
           - README.md
-  publish:
+  deploy:
     <<: *defaults
     steps:
     - checkout
@@ -75,6 +75,6 @@ workflows:
     - test:
         requires:
         - prepare
-    - deloy:
+    - deploy:
         requires:
         - build
