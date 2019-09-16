@@ -7,11 +7,16 @@ interface ButtonProps {
     className?: string,
     icon?: string,
     iconPosition?: string,
-    onClick?: React.MouseEventHandler<HTMLButtonElement>
+    onClick?: React.MouseEventHandler<HTMLButtonElement>,
+    style?: object,
+    loading?: boolean
 }
 
 const Button: React.FunctionComponent<ButtonProps> = (props) => {
-    const icon = props.icon && <Icon name={props.icon}/>;
+    let icon = props.icon && <Icon name={props.icon}/>;
+    if (props.loading) {
+        icon = <Icon name="loading"/>
+    }
     const inner = (
         props.iconPosition === 'right' ?
             <Fragment>{props.children} {icon}</Fragment>
