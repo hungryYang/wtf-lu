@@ -16,6 +16,7 @@
     "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT_DIR=./test-results/jest JEST_JUNIT_OUTPUT_NAME=results.xml jest --config=jest.config.ci.js"
   },
   "dependencies": {
+    "global": "^4.4.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
@@ -43,7 +44,7 @@
     "style-loader": "^1.0.0",
     "svg-sprite-loader": "^4.1.6",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.2.2",
+    "typescript": "^3.6.3",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.8.0"
