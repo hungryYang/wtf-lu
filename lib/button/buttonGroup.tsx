@@ -1,6 +1,8 @@
 import React from 'react';
-import classnames from '../../utils/classnames';
+import {classnames, scopedClass} from '@/utils/classnames';
 import './button.scss';
+
+const sc = scopedClass('buttonGroup');
 
 interface Props {
     className?: string,
@@ -11,7 +13,7 @@ class ButtonGroup extends React.Component<Props> {
     render() {
         const {children, className, style} = this.props;
         return (
-            <div className={classnames('wtf-buttonGroup', className)} style={style}>
+            <div className={classnames(sc(), className)} style={style}>
                 {children}
             </div>
         );

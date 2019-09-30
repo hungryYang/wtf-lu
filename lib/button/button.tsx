@@ -1,7 +1,9 @@
 import React, {Fragment} from 'react';
 import Icon from '../icon/Icon';
-import classnames from 'utils/classnames';
+import {classnames, scopedClass} from '@/utils/classnames';
 import './button.scss';
+
+const sc = scopedClass('button');
 
 interface ButtonProps {
     className?: string,
@@ -25,7 +27,7 @@ const Button: React.FunctionComponent<ButtonProps> = (props) => {
     );
     return (
         <button
-            className={classnames('wtf-button', props.className)}
+            className={classnames(sc(), props.className)}
             onClick={props.onClick}
         >{inner}</button>
     );

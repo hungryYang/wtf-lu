@@ -1,9 +1,8 @@
 const path = require('path')
-
 module.exports = {
   devtool: 'source-map',
   entry: {
-    index: './lib/index.tsx'
+    index: './lib/example.tsx'
   },
   output: {
     path: path.resolve(__dirname, '../dist/lib'),
@@ -13,7 +12,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      'utils': path.resolve(__dirname, '../utils')
+      '@': path.resolve(__dirname, '../lib/')
     }
   },
   module: {

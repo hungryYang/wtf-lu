@@ -1,0 +1,52 @@
+@import "../global.scss";
+.wtf-dialog {
+  &-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(#000, .4);
+    z-index: 1;
+  }
+  &-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30em;
+    background-color: #fff;
+    z-index: 2;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  &-close {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    cursor: pointer;
+  }
+  &-header{
+    padding: 16px 24px;
+    border-bottom: 1px solid lightgray;
+    color: rgba(0,0,0,0.85);
+    font-weight: 500;
+    font-size: 22px;
+  }
+  &-body {
+    padding: 24px;
+  }
+  &-footer {
+    border-top: 1px solid lightgray;
+    padding: 8px 24px;
+    display: flex;
+    justify-content: flex-end;
+    > button {
+      margin-right: 4px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
