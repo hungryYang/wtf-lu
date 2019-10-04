@@ -1,10 +1,9 @@
 import React, {ReactElement, Fragment, ReactNode} from 'react';
 import ReactDOM from 'react-dom';
-import {scopedClass} from '@/utils/classnames';
+import {scopedClass} from '../utils/classnames';
 import './dialog.scss';
-import Icon from '@/icon/Icon';
-// @ts-ignore
-import Button from '@/button/button';
+import Icon from '../icon/icon';
+import Button from '../button/button';
 
 const sc = scopedClass('wtf-dialog');
 

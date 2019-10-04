@@ -4,7 +4,7 @@ const sc = scopedClass('wtf-layout');
 
 const Aside: React.FunctionComponent = (props) => {
     return (
-        <div className={sc({'aside': true})}>
+        <div className={sc('aside')}>
             {props.children}
         </div>
     );

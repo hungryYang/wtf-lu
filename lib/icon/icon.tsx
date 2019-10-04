@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from 'react';
 import './importAllIcons';
 import './icon.scss';
-import {classnames, scopedClass} from '@/utils/classnames';
+import {scopedClass} from '../utils/classnames';
 
 const sc = scopedClass('wtf-icon');
 
@@ -13,8 +13,7 @@ interface Props {
 }
 
 const Icon: FunctionComponent<Props> = ({name, className, style, onClick}) => {
-
-    const classes = name === 'loading' ? classnames(sc(''), className, sc('spin')) : classnames(sc(''), className);
+    const classes = name === 'loading' ?  sc({'': true, spin: true}, className):sc('', className);
     return (
         <svg className={classes} style={style} onClick={onClick}>
             <use xlinkHref={`#${name}`}/>

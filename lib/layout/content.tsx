@@ -4,7 +4,7 @@ const sc = scopedClass('wtf-layout');
 
 const Content: React.FunctionComponent = (props) => {
     return (
-        <div className={sc({content: true})}>
+        <div className={sc('content')}>
             {props.children}
         </div>
     );

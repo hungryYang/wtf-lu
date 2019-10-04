@@ -21,11 +21,30 @@ describe('classnames', () => {
 });
 
 describe('scopedClass', () => {
-    it('验证参数为string', () => {
+    it('验证参数为空字符', () => {
         const sc = scopedClass('wtf-test')
         const classes = sc('')
         expect(classes).toEqual('wtf-test')
     });
 
+    it('验证参数为string', () => {
+        const sc = scopedClass('wtf-test2')
+        const classes = sc('a')
+        expect(classes).toEqual('wtf-test2-a')
+    });
+
+
+    it('验证参数为object', () => {
+        const sc = scopedClass('wtf-test3')
+        const classes = sc({'a': true, 'b': true, 'c': false})
+        expect(classes).toEqual('wtf-test3-a wtf-test3-b' )
+    });
+
+
+    it('验证额外的className', () => {
+        const sc = scopedClass('wtf-test3')
+        const classes = sc({'a': true, 'b': true, 'c': false}, 'extra')
+        expect(classes).toEqual('wtf-test3-a wtf-test3-b extra' )
+    });
 });
 
