@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Button from './button/button';
-import Icon from './icon/Icon';
+import Icon from './icon/icon';
 import ButtonGroup from './button/buttonGroup';
 import Dialog, {Confirm} from './dialog/dialog';
 import LayoutExample from './layout/example';
@@ -59,7 +59,7 @@ class Demo extends React.Component {
                     这是个啥
                 </Dialog>
                 <Button onClick={this.handlerClick3}>Alert</Button>
-                <LayoutExample />
+                <LayoutExample/>
             </div>
         );
     }
