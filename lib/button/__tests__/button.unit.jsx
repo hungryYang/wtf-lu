@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Button from '../button';
 import {mount} from 'enzyme';
+import Button from "../button";
 
 describe('按钮测试', () => {
   it('普通模式', () => {

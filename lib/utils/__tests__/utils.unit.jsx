@@ -1,4 +1,4 @@
-import classnames from '../classnames'
+import {classnames, scopedClass} from '../classnames'
 
 
 describe('classnames', () => {
@@ -19,3 +19,13 @@ describe('classnames', () => {
     expect(classes).toEqual('a v test 测试')
   });
 });
+
+describe('scopedClass', () => {
+    it('验证参数为string', () => {
+        const sc = scopedClass('wtf-test')
+        const classes = sc('')
+        expect(classes).toEqual('wtf-test')
+    });
+
+});
+

@@ -3,7 +3,7 @@ import Icon from '../icon/Icon';
 import {classnames, scopedClass} from '@/utils/classnames';
 import './button.scss';
 
-const sc = scopedClass('button');
+const sc = scopedClass('wtf-button');
 
 interface ButtonProps {
     className?: string,
@@ -27,7 +27,7 @@ const Button: React.FunctionComponent<ButtonProps> = (props) => {
     );
     return (
         <button
-            className={classnames(sc(), props.className)}
+            className={classnames(sc(''), props.className)}
             onClick={props.onClick}
         >{inner}</button>
     );

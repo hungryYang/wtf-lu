@@ -6,7 +6,7 @@ import Icon from '@/icon/Icon';
 // @ts-ignore
 import Button from '@/button/button';
 
-const sc = scopedClass('dialog');
+const sc = scopedClass('wtf-dialog');
 
 interface DialogProps {
     title?: string,
@@ -18,7 +18,7 @@ interface DialogProps {
 }
 
 const Dialog: React.FunctionComponent<DialogProps> = (props) => {
-    const result = props.visible && <div className={sc()}>
+    const result = props.visible && <div className={sc('')}>
         {
             props.mask && <div className={sc('mask')} onClick={() => {
                 props.maskClosable && props.onClose;

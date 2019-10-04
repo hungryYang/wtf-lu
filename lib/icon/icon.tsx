@@ -3,7 +3,7 @@ import './importAllIcons';
 import './icon.scss';
 import {classnames, scopedClass} from '@/utils/classnames';
 
-const sc = scopedClass('icon');
+const sc = scopedClass('wtf-icon');
 
 interface Props {
     name: string,
@@ -14,7 +14,7 @@ interface Props {
 
 const Icon: FunctionComponent<Props> = ({name, className, style, onClick}) => {
 
-    const classes = name === 'loading' ? classnames(sc(), className, sc('spin')) : classnames(sc(), className);
+    const classes = name === 'loading' ? classnames(sc(''), className, sc('spin')) : classnames(sc(''), className);
     return (
         <svg className={classes} style={style} onClick={onClick}>
             <use xlinkHref={`#${name}`}/>
@@ -22,5 +22,4 @@ const Icon: FunctionComponent<Props> = ({name, className, style, onClick}) => {
     );
 };
 
-// @ts-ignore
 export default Icon;

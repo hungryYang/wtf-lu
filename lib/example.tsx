@@ -4,7 +4,7 @@ import Button from './button/button';
 import Icon from './icon/Icon';
 import ButtonGroup from './button/buttonGroup';
 import Dialog, {Confirm} from './dialog/dialog';
-
+import LayoutExample from './layout/example';
 
 class Demo extends React.Component {
     state = {
@@ -25,10 +25,11 @@ class Demo extends React.Component {
 
     handlerClick3 = () => {
         const close = Confirm({
-            content:<h1>1111 <Button onClick={() => close()}>ok</Button> </h1>,
-        onYes: () => {console.log('yes')},
-        onNo:() => {console.log('no')}})
-    }
+            content: <h1>1111 <Button onClick={() => close()}>ok</Button></h1>,
+            onYes: () => {console.log('yes');},
+            onNo: () => {console.log('no');}
+        });
+    };
 
     render() {
         const {loading} = this.state;
@@ -58,6 +59,7 @@ class Demo extends React.Component {
                     这是个啥
                 </Dialog>
                 <Button onClick={this.handlerClick3}>Alert</Button>
+                <LayoutExample />
             </div>
         );
     }

@@ -1,0 +1,24 @@
+.wtf-layout {
+  display: flex;
+  flex-direction: column;
+  &-content {
+    flex-grow: 1;
+    border: 1px solid red;
+  }
+  &-hasAside {
+    flex-direction: row;
+  }
+  & & {
+    flex-grow: 1;
+  }
+  &-header {
+    border: 1px solid blue;
+  }
+  &-footer {
+    border: 1px solid yellow;
+  }
+  &-aside {
+    border: 1px solid green;
+
+  }
+}
