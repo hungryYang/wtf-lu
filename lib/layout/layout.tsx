@@ -13,7 +13,7 @@ const Layout: React.FunctionComponent<Props> = (props) => {
     const {className, ...restProps} = props;
     const hasAside = (props.children as Array<ReactElement>).reduce((result, child) =>{
         return result || (child.type as any).name === 'Aside'
-}, false)
+    }, false)
     return (
         <div className={sc({'': true, hasAside}, className)} {...restProps}>
             {props.children}

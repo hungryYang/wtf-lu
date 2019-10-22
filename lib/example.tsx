@@ -5,6 +5,7 @@ import Icon from './icon/icon';
 import ButtonGroup from './button/buttonGroup';
 import Dialog, {Confirm} from './dialog/dialog';
 import LayoutExample from './layout/example';
+import MessageExample from './message/example';
 
 class Demo extends React.Component {
     state = {
@@ -35,6 +36,7 @@ class Demo extends React.Component {
         const {loading} = this.state;
         return (
             <div>
+                <MessageExample />
                 <Button icon="up" className="j">测试1</Button>
                 <Button icon="edit" onClick={this.handlerClick} className="j" loading={loading}>loading按钮</Button>
                 <ButtonGroup>

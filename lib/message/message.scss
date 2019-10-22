@@ -1,0 +1,20 @@
+.wtf-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  z-index: 2;
+  &-content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    &-main {
+      margin-left: 6px;
+    }
+  }
+}

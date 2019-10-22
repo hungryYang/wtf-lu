@@ -15,8 +15,8 @@ interface Props {
 const Icon: FunctionComponent<Props> = ({name, className, style, onClick}) => {
     const classes = name === 'loading' ?  sc({'': true, spin: true}, className):sc('', className);
     return (
-        <svg className={classes} style={style} onClick={onClick}>
-            <use xlinkHref={`#${name}`}/>
+        <svg className={classes} onClick={onClick} style={style} >
+            <use xlinkHref={`#${name}`} />
         </svg>
     );
 };
