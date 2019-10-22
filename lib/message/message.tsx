@@ -57,14 +57,13 @@ const notice = (type: string) => {
                 return resolve();
             }, duration * 1000);
         }));
-    }
+    };
 };
-
 
 const api: any = {};
 
 ['info', 'waring', 'success', 'error'].forEach(type => {
-    api[type] = notice(type)
+    api[type] = notice(type);
 });
 
 export interface ThenableArgument {
@@ -80,7 +79,9 @@ export interface MessageType {
 
 export interface MessageApi {
     info({}: InfoProps): MessageType,
+
     error({}: InfoProps): MessageType,
+
     success({}: InfoProps): MessageType
 }
 
