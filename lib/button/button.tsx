@@ -11,7 +11,8 @@ interface ButtonProps {
     iconPosition?: string,
     onClick?: React.MouseEventHandler<HTMLButtonElement>,
     style?: object,
-    loading?: boolean
+    loading?: boolean,
+    disabled?: boolean | undefined
 }
 
 const Button: React.FunctionComponent<ButtonProps> = (props) => {
@@ -25,9 +26,11 @@ const Button: React.FunctionComponent<ButtonProps> = (props) => {
             :
             <Fragment>{icon} {props.children}</Fragment>
     );
+    console.log(props.disabled)
     return (
         <button
-            className={sc('', props.className)}
+            className={sc({'': true, disabled: props.disabled}, props.className)}
+            disabled={props.disabled}
             onClick={props.onClick}
         >{inner}</button>
     );

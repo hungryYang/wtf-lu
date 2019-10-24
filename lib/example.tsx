@@ -37,7 +37,7 @@ class Demo extends React.Component {
         return (
             <div>
                 <MessageExample />
-                <Button icon="up" className="j">测试1</Button>
+                <Button icon="up" className="j" disabled>测试1</Button>
                 <Button icon="edit" onClick={this.handlerClick} className="j" loading={loading}>loading按钮</Button>
                 <ButtonGroup>
                     <Button icon="left" className="left">left</Button>

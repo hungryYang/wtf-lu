@@ -8,12 +8,13 @@ const sc = scopedClass('wtf-message');
 
 interface MessageProps {
     visible: boolean,
-    type: string
+    type: string,
+    top?: number
 }
 
 
 const Message: React.FunctionComponent<MessageProps> = (props) => {
-    const result = props.visible && <div className={sc('')}>
+    const result = props.visible && <div className={sc('')} style={{top: `${props.top}px`}}>
         <div className={sc('content')}>
             <Icon name={props.type} style={{'fontSize': '18px'}}/>
             <div className={sc('content-main')}>{props.children}</div>
@@ -25,7 +26,8 @@ const Message: React.FunctionComponent<MessageProps> = (props) => {
 };
 
 Message.defaultProps = {
-    type: 'info'
+    type: 'info',
+    top: 20
 };
 
 interface InfoProps {
@@ -33,7 +35,6 @@ interface InfoProps {
     duration?: number,
     onClose?: () => void
 }
-
 
 const notice = (type: string) => {
     return (props: InfoProps) => {

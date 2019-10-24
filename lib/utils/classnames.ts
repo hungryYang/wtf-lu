@@ -1,7 +1,7 @@
 export const classnames = (...classes: (string | undefined)[]) => classes.filter(Boolean).join(' ')
 
 interface classToggles {
-    [K:string]: Boolean
+    [K:string]: boolean | undefined
 }
 
 export function scopedClass (componentClass: string) {
