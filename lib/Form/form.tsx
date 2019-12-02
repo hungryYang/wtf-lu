@@ -27,6 +27,10 @@ interface FormProps {
     errors: FormErrors
 }
 
+export function noErrors(errors: any) {
+    return !!Object.entries(errors).length;
+}
+
 const Form: React.FunctionComponent<FormProps> = (props) => {
     const onChange = (key: string, event: any) => {
         const value = {...props.value, [key]: event.target.value};
@@ -53,7 +57,7 @@ const Form: React.FunctionComponent<FormProps> = (props) => {
                             </td>
                         </tr>
                         <tr>
-                            <td />
+                            <td/>
                             <td>
                                 {
                                     props.errors[field.name]
@@ -64,13 +68,12 @@ const Form: React.FunctionComponent<FormProps> = (props) => {
                     ))
                 }
                 <tbody>
-                    <tr>
-                        <td>
-                            {props.buttons}
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        {props.buttons}
+                    </td>
+                </tr>
                 </tbody>
-
             </table>
         </form>
     );

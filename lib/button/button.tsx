@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import Icon from '../icon/icon';
-import {scopedClass} from '../utils/classnames';
+import {scopedClass} from '@/utils/classnames';
 import './button.scss';
 
 const sc = scopedClass('wtf-button');
@@ -12,7 +12,8 @@ interface ButtonProps {
     onClick?: React.MouseEventHandler<HTMLButtonElement>,
     style?: object,
     loading?: boolean,
-    disabled?: boolean | undefined
+    disabled?: boolean | undefined,
+    htmlType?: 'button' | 'submit' | 'reset' | undefined
 }
 
 const Button: React.FunctionComponent<ButtonProps> = (props) => {
@@ -26,15 +27,19 @@ const Button: React.FunctionComponent<ButtonProps> = (props) => {
             :
             <Fragment>{icon} {props.children}</Fragment>
     );
-    console.log(props.disabled)
+    console.log(props.htmlType);
     return (
         <button
             className={sc({'': true, disabled: props.disabled}, props.className)}
+            type={props.htmlType}
             disabled={props.disabled}
             onClick={props.onClick}
         >{inner}</button>
     );
 };
 
+Button.defaultProps = {
+    htmlType: 'button'
+};
 
 export default Button;

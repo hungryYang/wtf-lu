@@ -1,6 +1,6 @@
 import React, {Fragment, useState} from 'react';
-import Form, {FormField, FormValue} from './form';
-import Button from '../button/button'
+import Form, {FormField, FormValue, noErrors} from './form';
+import Button from '../button/button';
 
 const validate = (formValue: FormValue) => {
     if (formValue.username.length < 3) {
@@ -19,22 +19,25 @@ const FormExample = () => {
         {name: 'username', label: '用户名', input: {type: 'text'}},
         {name: 'password', label: '密码', input: {type: 'text'}}
     ]);
+
     const [errors, setErrors] = useState<any>({});
     const onChange = (value: FormValue) => {
         setFormData(value);
         const errors = validate(value);
+        console.log(errors);
         setErrors(errors);
+        console.log(noErrors(errors));
     };
     const onSubmit = (value: FormValue) => {
-        console.log(value)
-    }
+        console.log(value);
+    };
     return (
         <div>
             <Form value={formData}
                   fields={fields}
-                  buttons = {
+                  buttons={
                       <Fragment>
-                          <Button>提交</Button>
+                          <Button htmlType="submit">提交</Button>
                       </Fragment>
                   }
                   errors={errors}
