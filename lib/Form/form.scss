@@ -1,0 +1,12 @@
+.wtf-form-table {
+  &-td {
+    padding-bottom: 22px;
+  }
+  &-tr {
+    position: relative;
+  }
+
+  &-error {
+    position: absolute;
+  }
+}

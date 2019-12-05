@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import Input from '../input/input';
+import {scopedClass} from '@/utils/classnames';
+import './form.scss';
 
 interface FormFieldDefaultRender {
     type: 'text' | 'textarea' | 'number' | 'password'
@@ -31,6 +34,8 @@ export function noErrors(errors: any) {
     return !!Object.entries(errors).length;
 }
 
+const sc = scopedClass('wtf-form-table');
+
 const Form: React.FunctionComponent<FormProps> = (props) => {
     const onChange = (key: string, event: any) => {
         const value = {...props.value, [key]: event.target.value};
@@ -42,37 +47,44 @@ const Form: React.FunctionComponent<FormProps> = (props) => {
     };
     return (
         <form onSubmit={onSubmit}>
-            <table>
+            <table className={sc('')}>
+                <tbody className={sc('tbody')}>
                 {
                     props.fields.map((field, index) => (
-                        <tbody key={index}>
-                        <tr>
-                            <td>
-                                {field.label}
-                            </td>
-                            <td>
-                                <input value={props.value[field.name]}
-                                       onChange={onChange.bind(null, field.name)}
-                                       type={field.input.type}/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td/>
-                            <td>
-                                {
-                                    props.errors[field.name]
-                                }
-                            </td>
-                        </tr>
-                        </tbody>
+                        <Fragment key={index}>
+                            <tr className={sc('tr')} key={index}>
+                                <td className={sc('td')}>
+                                    <span className={sc('label')}>{field.label}</span>
+                                </td>
+                                <td className={sc('td')}>
+                                    <Input value={props.value[field.name]}
+                                           onChange={onChange.bind(null, field.name)}
+                                           type={field.input.type}/>
+                                    {
+                                        props.errors[field.name] && <div className={sc('error')}>{props.errors[field.name]}</div>
+                                    }
+                                </td>
+
+                            </tr>
+                            {/*<tr className={sc('error')}>*/}
+                                {/*<td/>*/}
+                                {/*<td>*/}
+                                    {/*{*/}
+                                        {/*props.errors[field.name]*/}
+                                    {/*}*/}
+                                {/*</td>*/}
+                            {/*</tr>*/}
+                        </Fragment>
                     ))
                 }
+                </tbody>
                 <tbody>
-                <tr>
-                    <td>
-                        {props.buttons}
-                    </td>
-                </tr>
+                    <tr className={sc('tr')}>
+                        <td className={sc('td')} />
+                        <td className={sc('td')}>
+                            {props.buttons}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </form>

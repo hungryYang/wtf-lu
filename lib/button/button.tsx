@@ -12,7 +12,7 @@ interface ButtonProps {
     onClick?: React.MouseEventHandler<HTMLButtonElement>,
     style?: object,
     loading?: boolean,
-    disabled?: boolean | undefined,
+    disabled?: boolean,
     htmlType?: 'button' | 'submit' | 'reset' | undefined
 }
 
@@ -27,7 +27,6 @@ const Button: React.FunctionComponent<ButtonProps> = (props) => {
             :
             <Fragment>{icon} {props.children}</Fragment>
     );
-    console.log(props.htmlType);
     return (
         <button
             className={sc({'': true, disabled: props.disabled}, props.className)}
@@ -39,7 +38,8 @@ const Button: React.FunctionComponent<ButtonProps> = (props) => {
 };
 
 Button.defaultProps = {
-    htmlType: 'button'
+    htmlType: 'button',
+    disabled: false
 };
 
 export default Button;
